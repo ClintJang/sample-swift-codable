@@ -1,0 +1,16 @@
+xcschememanagement.plist
+Xcuserdata/
+WorkspaceSettings.xcsettings
+UserInterfaceState.xcuserstate
+Breakpoints_v2.xcbkptlist
+contents.xcworkspacedata
+
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+*.xcworkspace
+
+
+# CocoaPods
+Pods/
+Podfile.lock

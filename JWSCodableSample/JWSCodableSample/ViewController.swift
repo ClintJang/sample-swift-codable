@@ -13,20 +13,41 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        requestSample()
+        sampleDataType1()
+        
+        sampleRequestType1()
     }
 
+    func sampleDataType1() {
+        print("===============================")
+        print("== \(#function)")
+        
+        let dataType1 = """
+        {
+            "id": "test@gmail.com",
+            "code": "abcdefg1234",
+            "order": 1
+        }
+        """.data(using: .utf8)!
+        
+        let sample = try! JSONDecoder().decode(SampleData.Type1.self, from: dataType1)
+        print(sample)
+        
+        print("===============================\n\n")
 
-    func requestSample(){
-        print("\(#function)")
+    }
+
+    func sampleRequestType1(){
+        print("===============================")
+        print("== \(#function)")
         
         let url = URL(string: "https://jsonplaceholder.typicode.com/todos/1")
         URLSession.shared.dataTask(with: url!, completionHandler: {
             (data, response, error) in
             if let error = error {
-                print("\(error)")
+                print("== \(error)")
             } else {
-                print("success")
+                print("== success")
                 
                 guard let data = data else {
                     return
@@ -34,11 +55,13 @@ class ViewController: UIViewController {
                 
                 do {
                     let codableStruct = try JSONDecoder().decode(Response.todos.self, from: data)
-                    print(codableStruct)
-                    print("id : \(codableStruct.id)")
+                    print("\(codableStruct)")
+                    print("== id : \(codableStruct.id)")
                 } catch {
-                    print("err in codable")
+                    print("== err in codable")
                 }
+                
+                print("===============================\n\n")
             }
         }).resume()
     }

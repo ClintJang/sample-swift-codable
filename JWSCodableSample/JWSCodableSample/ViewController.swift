@@ -32,9 +32,7 @@ class ViewController: UIViewController {
         
         let sample = try! JSONDecoder().decode(SampleData.Type1.self, from: dataType1)
         print(sample)
-        
         print("===============================\n\n")
-
     }
 
     func sampleRequestType1(){
@@ -54,7 +52,7 @@ class ViewController: UIViewController {
                 }
                 
                 do {
-                    let codableStruct = try JSONDecoder().decode(Response.todos.self, from: data)
+                    let codableStruct = try JSONDecoder().decode(SampleResponse.todos.self, from: data)
                     print("\(codableStruct)")
                     print("== id : \(codableStruct.id)")
                 } catch {

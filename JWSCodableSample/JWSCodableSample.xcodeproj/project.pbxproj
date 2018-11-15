@@ -12,7 +12,8 @@
 		BC0A92DD219A693D0055D1AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC0A92DB219A693D0055D1AA /* Main.storyboard */; };
 		BC0A92DF219A693E0055D1AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC0A92DE219A693E0055D1AA /* Assets.xcassets */; };
 		BC0A92E2219A693E0055D1AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC0A92E0219A693E0055D1AA /* LaunchScreen.storyboard */; };
-		BC0A92EC219A6DA50055D1AA /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0A92EB219A6DA50055D1AA /* Response.swift */; };
+		BC0A92EC219A6DA50055D1AA /* SampleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0A92EB219A6DA50055D1AA /* SampleResponse.swift */; };
+		BC2778B8219E22CA0011D4EB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BC2778B7219E22CA0011D4EB /* README.md */; };
 		BC507F35219B9D39003B649D /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC507F34219B9D39003B649D /* SampleData.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +25,8 @@
 		BC0A92DE219A693E0055D1AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC0A92E1219A693E0055D1AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC0A92E3219A693E0055D1AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC0A92EB219A6DA50055D1AA /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		BC0A92EB219A6DA50055D1AA /* SampleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleResponse.swift; sourceTree = "<group>"; };
+		BC2778B7219E22CA0011D4EB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BC507F34219B9D39003B649D /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,6 +44,7 @@
 		BC0A92CB219A693D0055D1AA = {
 			isa = PBXGroup;
 			children = (
+				BC2778B7219E22CA0011D4EB /* README.md */,
 				BC0A92D6219A693D0055D1AA /* JWSCodableSample */,
 				BC0A92D5219A693D0055D1AA /* Products */,
 			);
@@ -73,7 +76,7 @@
 		BC0A92E9219A694A0055D1AA /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				BC0A92EB219A6DA50055D1AA /* Response.swift */,
+				BC0A92EB219A6DA50055D1AA /* SampleResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			files = (
 				BC0A92E2219A693E0055D1AA /* LaunchScreen.storyboard in Resources */,
 				BC0A92DF219A693E0055D1AA /* Assets.xcassets in Resources */,
+				BC2778B8219E22CA0011D4EB /* README.md in Resources */,
 				BC0A92DD219A693D0055D1AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,7 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC0A92DA219A693D0055D1AA /* ViewController.swift in Sources */,
-				BC0A92EC219A6DA50055D1AA /* Response.swift in Sources */,
+				BC0A92EC219A6DA50055D1AA /* SampleResponse.swift in Sources */,
 				BC0A92D8219A693D0055D1AA /* AppDelegate.swift in Sources */,
 				BC507F35219B9D39003B649D /* SampleData.swift in Sources */,
 			);

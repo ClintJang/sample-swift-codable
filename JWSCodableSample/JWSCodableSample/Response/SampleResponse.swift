@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Response { }
+struct SampleResponse { }
 
 /**
  {
@@ -18,7 +18,7 @@ struct Response { }
      completed: false
  }
  */
-extension Response {
+extension SampleResponse {
     struct todos: Codable {
         let userId:Int
         let id:Int

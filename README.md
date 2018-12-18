@@ -39,8 +39,11 @@ Codable을 사용하면 두 프로토콜을 모두 준수해야 되지요.
 통상 사용할 때는 디코딩을 할때 사용하는 것 같습니다.
 
 ## 설명이 잘 되어있는 링크
+- 민소네님 블로그
+	- [Codable, 현실의 Codable 그리고 Extension](http://minsone.github.io/programming/swift-codable-and-exceptions-extension)
 - 제드님 블로그
 	- [Swift ) 왕초보를 위한 Codable / JSON Encoding and Decoding](https://zeddios.tistory.com/373)
+
 
 # Sample Source
 > 이해를 돕기위해 셈플 소스를 추가해 봤습니다.

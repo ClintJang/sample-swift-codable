@@ -50,11 +50,18 @@ Codable을 사용하면 두 프로토콜을 모두 준수해야 되지요.
 
 - [SampleData.swift](https://github.com/ClintJang/sample-swift-codable/blob/master/JWSCodableSample/JWSCodableSample/Data/SampleData.swift)
 
-```
-struct SampleData { }
+```swift
+struct SampleStructData01: Codable {
+    let id: String
+    let code: String
+    let order: Int
+}
 
-extension SampleData {
-    struct Type1 : Codable {
+struct SampleStructData02: Codable {
+    let code: String
+    let data: SampleStructData02SubData
+
+    struct SampleStructData02SubData: Codable {
         let id : String
         let code : String
         let order : Int
@@ -64,7 +71,7 @@ extension SampleData {
 
 - [SampleResponse.swift](https://github.com/ClintJang/sample-swift-codable/blob/master/JWSCodableSample/JWSCodableSample/Data/SampleResponse.swift)
 
-```
+```swift
 struct SampleResponse { }
 
 /**
@@ -89,14 +96,14 @@ extension SampleResponse {
 ```
 
 - [ViewController.swift](https://github.com/ClintJang/sample-swift-codable/blob/master/JWSCodableSample/JWSCodableSample/ViewController.swift)
-	- func sampleDataType1()
+	- func sampleStructData01()
 	
-	```
-	func sampleDataType1() {
+	```swift
+	func sampleStructData01() {
         print("===============================")
         print("== \(#function)")
         
-        let dataType1 = """
+        let dataJsonString = """
         {
             "id": "test@gmail.com",
             "code": "abcdefg1234",
@@ -104,16 +111,40 @@ extension SampleResponse {
         }
         """.data(using: .utf8)!
         
-        let sample = try! JSONDecoder().decode(SampleData.Type1.self, from: dataType1)
+        let sample = try! JSONDecoder().decode(SampleStructData01.self, from: dataJsonString)
         print(sample)
         print("===============================\n\n")
     }
 	```
+    
+    - func sampleStructData01()
+    
+    ```swift
+    func sampleStructData02() {
+        print("===============================")
+        print("== \(#function)")
+        
+        let dataJsonString = """
+        {
+            "code": "poiuytrewq",
+            "data": {
+                "id": "test@gmail.com",
+                "code": "abcdefg1234",
+                "order": 1
+            }
+        }
+        """.data(using: .utf8)!
+        
+        let sample = try! JSONDecoder().decode(SampleStructData02.self, from: dataJsonString)
+        print(sample)
+        print("===============================\n\n")
+    }
+    ```
 
-	- func sampleRequestType1()
+	- func sampleRequest01()
 	
-	```
-	func sampleRequestType1(){
+	```swift
+	func sampleRequest01(){
         print("===============================")
         print("== \(#function)")
         

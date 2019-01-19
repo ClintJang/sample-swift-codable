@@ -13,16 +13,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sampleDataType1()
+        // Struct
+        sampleStructData01()
+        sampleStructData02()
         
-        sampleRequestType1()
+        // Request
+        sampleRequest01()
     }
+}
 
-    func sampleDataType1() {
+// MARK: - Sample Struct
+extension ViewController {
+    func sampleStructData01() {
         print("===============================")
         print("== \(#function)")
         
-        let dataType1 = """
+        let dataJsonString = """
         {
             "id": "test@gmail.com",
             "code": "abcdefg1234",
@@ -30,12 +36,40 @@ class ViewController: UIViewController {
         }
         """.data(using: .utf8)!
         
-        let sample = try! JSONDecoder().decode(SampleData.Type1.self, from: dataType1)
+        let sample = try! JSONDecoder().decode(SampleStructData01.self, from: dataJsonString)
         print(sample)
         print("===============================\n\n")
     }
 
-    func sampleRequestType1(){
+    func sampleStructData02() {
+        print("===============================")
+        print("== \(#function)")
+        
+        let dataJsonString = """
+        {
+            "code": "poiuytrewq",
+            "data": {
+                "id": "test@gmail.com",
+                "code": "abcdefg1234",
+                "order": 1
+            }
+        }
+        """.data(using: .utf8)!
+        
+        let sample = try! JSONDecoder().decode(SampleStructData02.self, from: dataJsonString)
+        print(sample)
+        print("===============================\n\n")
+    }
+}
+
+// MARK: - Sample enum
+extension ViewController {
+    
+}
+
+// MARK: - Sample Request
+extension ViewController {
+    func sampleRequest01(){
         print("===============================")
         print("== \(#function)")
         

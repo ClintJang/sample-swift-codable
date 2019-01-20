@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         // Struct
         sampleStructData01()
         sampleStructData02()
+        sampleStructData03()
         
         // Request
         sampleRequest01()
@@ -57,6 +58,23 @@ extension ViewController {
         """.data(using: .utf8)!
         
         let sample = try! JSONDecoder().decode(SampleStructData02.self, from: dataJsonString)
+        print(sample)
+        print("===============================\n\n")
+    }
+    
+    func sampleStructData03() {
+        print("===============================")
+        print("== \(#function)")
+        
+        let dataJsonString = """
+        {
+            "id": "test@gmail.com",
+            "code": "abcdefg1234",
+            "order_test": 1
+        }
+        """.data(using: .utf8)!
+        
+        let sample = try! JSONDecoder().decode(SampleStructData03.self, from: dataJsonString)
         print(sample)
         print("===============================\n\n")
     }

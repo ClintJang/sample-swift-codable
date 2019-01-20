@@ -14,7 +14,7 @@
 		BC0A92E2219A693E0055D1AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC0A92E0219A693E0055D1AA /* LaunchScreen.storyboard */; };
 		BC0A92EC219A6DA50055D1AA /* SampleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0A92EB219A6DA50055D1AA /* SampleResponse.swift */; };
 		BC2778B8219E22CA0011D4EB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BC2778B7219E22CA0011D4EB /* README.md */; };
-		BC507F35219B9D39003B649D /* SampleStructData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC507F34219B9D39003B649D /* SampleStructData.swift */; };
+		BC507F35219B9D39003B649D /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC507F34219B9D39003B649D /* SampleData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		BC0A92E3219A693E0055D1AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC0A92EB219A6DA50055D1AA /* SampleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleResponse.swift; sourceTree = "<group>"; };
 		BC2778B7219E22CA0011D4EB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		BC507F34219B9D39003B649D /* SampleStructData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleStructData.swift; sourceTree = "<group>"; };
+		BC507F34219B9D39003B649D /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 		BC507F33219B9D1C003B649D /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				BC507F34219B9D39003B649D /* SampleStructData.swift */,
+				BC507F34219B9D39003B649D /* SampleData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -164,7 +164,7 @@
 				BC0A92DA219A693D0055D1AA /* ViewController.swift in Sources */,
 				BC0A92EC219A6DA50055D1AA /* SampleResponse.swift in Sources */,
 				BC0A92D8219A693D0055D1AA /* AppDelegate.swift in Sources */,
-				BC507F35219B9D39003B649D /* SampleStructData.swift in Sources */,
+				BC507F35219B9D39003B649D /* SampleData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

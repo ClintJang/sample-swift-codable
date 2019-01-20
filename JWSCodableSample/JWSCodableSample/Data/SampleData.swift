@@ -28,7 +28,7 @@ struct SampleStructData02: Codable {
 struct SampleStructData03 : Codable{
     var id : String
     var code : String
-    var order : Date
+    var order : Int
     enum CodingKeys : String, CodingKey{
         case id
         case code

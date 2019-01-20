@@ -67,6 +67,17 @@ struct SampleStructData02: Codable {
         let order : Int
     }
 }
+
+struct SampleStructData03 : Codable{
+    var id : String
+    var code : String
+    var order : Int
+    enum CodingKeys : String, CodingKey{
+        case id
+        case code
+        case order = "order_test"
+    }
+}
 ```
 
 - [SampleResponse.swift](https://github.com/ClintJang/sample-swift-codable/blob/master/JWSCodableSample/JWSCodableSample/Data/SampleResponse.swift)
@@ -117,7 +128,7 @@ extension SampleResponse {
     }
 	```
     
-    - func sampleStructData01()
+    - func sampleStructData02()
     
     ```swift
     func sampleStructData02() {
@@ -136,6 +147,27 @@ extension SampleResponse {
         """.data(using: .utf8)!
         
         let sample = try! JSONDecoder().decode(SampleStructData02.self, from: dataJsonString)
+        print(sample)
+        print("===============================\n\n")
+    }
+    ```
+    
+    - func sampleStructData03()
+    
+    ```swift
+    func sampleStructData02() {
+        print("===============================")
+        print("== \(#function)")
+        
+        let dataJsonString = """
+        {
+            "id": "test@gmail.com",
+            "code": "abcdefg1234",
+            "order_test": 1
+        }
+        """.data(using: .utf8)!
+        
+        let sample = try! JSONDecoder().decode(SampleStructData03.self, from: dataJsonString)
         print(sample)
         print("===============================\n\n")
     }
@@ -173,4 +205,33 @@ extension SampleResponse {
         }).resume()
     }
 	```
+	
+## Result Log
+
+```
+===============================
+== sampleStructData01()
+SampleStructData01(id: "test@gmail.com", code: "abcdefg1234", order: 1)
+===============================
+
+
+===============================
+== sampleStructData02()
+SampleStructData02(code: "poiuytrewq", data: JWSCodableSample.SampleStructData02.SampleStructData02SubData(id: "test@gmail.com", code: "abcdefg1234", order: 1))
+===============================
+
+
+===============================
+== sampleStructData03()
+SampleStructData03(id: "test@gmail.com", code: "abcdefg1234", order: 1)
+===============================
+
+
+===============================
+== sampleRequest01()
+== success
+todos(userId: 1, id: 1, title: Optional("delectus aut autem"), completed: Optional(false), testTrash: nil)
+== id : 1
+===============================
+```
 	

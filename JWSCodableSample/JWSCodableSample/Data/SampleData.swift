@@ -11,7 +11,8 @@ import Foundation
 struct SampleStructData01: Codable {
     let id: String
     let code: String
-    let order: Int
+    var order: Int?
+    var test: Int?
 }
 
 struct SampleStructData02: Codable {
@@ -25,9 +26,9 @@ struct SampleStructData02: Codable {
     }
 }
 
-struct SampleStructData03 : Codable{
-    var id : String
-    var code : String
+struct SampleStructData03 : Codable {
+    let id : String
+    var code : String?
     var order : Int
     enum CodingKeys : String, CodingKey{
         case id
@@ -36,7 +37,10 @@ struct SampleStructData03 : Codable{
     }
 }
 
-
-
+struct SampleStructData04 : Codable {
+    let id : String
+    let code : String
+    let order : Int
+}
 
 

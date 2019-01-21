@@ -54,13 +54,14 @@ Codable을 사용하면 두 프로토콜을 모두 준수해야 되지요.
 struct SampleStructData01: Codable {
     let id: String
     let code: String
-    let order: Int
+    var order: Int?
+    var test: Int?
 }
 
 struct SampleStructData02: Codable {
     let code: String
     let data: SampleStructData02SubData
-
+    
     struct SampleStructData02SubData: Codable {
         let id : String
         let code : String
@@ -68,15 +69,21 @@ struct SampleStructData02: Codable {
     }
 }
 
-struct SampleStructData03 : Codable{
-    var id : String
-    var code : String
+struct SampleStructData03 : Codable {
+    let id : String
+    var code : String?
     var order : Int
     enum CodingKeys : String, CodingKey{
         case id
         case code
         case order = "order_test"
     }
+}
+
+struct SampleStructData04 : Codable {
+    let id : String
+    let code : String
+    let order : Int
 }
 ```
 
@@ -172,6 +179,39 @@ extension SampleResponse {
         print("===============================\n\n")
     }
     ```
+   
+   - func sampleStructData04()
+    
+    ```swift
+    func sampleStructData02() {
+        print("===============================")
+        print("== \(#function)")
+        
+        let dataJsonString = """
+        [
+            {
+                "id": "aaaa@gmail.com",
+                "code": "1234567890",
+                "order": 1
+            },
+            {
+                "id": "bbbb@gmail.com",
+                "code": "abcdefghijklmn",
+                "order": 2
+            }
+        ]
+        """.data(using: .utf8)!
+        
+        do {
+            let sample = try JSONDecoder().decode([SampleStructData04].self, from: dataJsonString)
+            print(sample)
+        } catch {
+            print(error)
+        }
+        
+        print("===============================\n\n")
+    }
+    ```
 
 	- func sampleRequest01()
 	
@@ -211,7 +251,7 @@ extension SampleResponse {
 ```
 ===============================
 == sampleStructData01()
-SampleStructData01(id: "test@gmail.com", code: "abcdefg1234", order: 1)
+SampleStructData01(id: "test@gmail.com", code: "abcdefg1234", order: Optional(1), test: nil)
 ===============================
 
 
@@ -223,7 +263,13 @@ SampleStructData02(code: "poiuytrewq", data: JWSCodableSample.SampleStructData02
 
 ===============================
 == sampleStructData03()
-SampleStructData03(id: "test@gmail.com", code: "abcdefg1234", order: 1)
+SampleStructData03(id: "test@gmail.com", code: Optional("abcdefg1234"), order: 1)
+===============================
+
+
+===============================
+== sampleStructData04()
+[JWSCodableSample.SampleStructData04(id: "aaaa@gmail.com", code: "1234567890", order: 1), JWSCodableSample.SampleStructData04(id: "bbbb@gmail.com", code: "abcdefghijklmn", order: 2)]
 ===============================
 
 

@@ -13,6 +13,12 @@
 		BC0A92DF219A693E0055D1AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC0A92DE219A693E0055D1AA /* Assets.xcassets */; };
 		BC0A92E2219A693E0055D1AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC0A92E0219A693E0055D1AA /* LaunchScreen.storyboard */; };
 		BC0A92EC219A6DA50055D1AA /* SampleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0A92EB219A6DA50055D1AA /* SampleResponse.swift */; };
+		BC1572152224B2ED008B4E16 /* KeyedEncodingContainer+Any.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC15720F2224B2ED008B4E16 /* KeyedEncodingContainer+Any.swift */; };
+		BC1572162224B2ED008B4E16 /* InvalidElementStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1572102224B2ED008B4E16 /* InvalidElementStrategy.swift */; };
+		BC1572172224B2ED008B4E16 /* RawCodingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1572112224B2ED008B4E16 /* RawCodingKey.swift */; };
+		BC1572182224B2ED008B4E16 /* KeyedDecodingContainer+Any.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1572122224B2ED008B4E16 /* KeyedDecodingContainer+Any.swift */; };
+		BC1572192224B2ED008B4E16 /* GenericDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1572132224B2ED008B4E16 /* GenericDecodingContainer.swift */; };
+		BC15721A2224B2ED008B4E16 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1572142224B2ED008B4E16 /* AnyCodable.swift */; };
 		BC2778B8219E22CA0011D4EB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BC2778B7219E22CA0011D4EB /* README.md */; };
 		BC507F35219B9D39003B649D /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC507F34219B9D39003B649D /* SampleData.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +32,12 @@
 		BC0A92E1219A693E0055D1AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC0A92E3219A693E0055D1AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC0A92EB219A6DA50055D1AA /* SampleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleResponse.swift; sourceTree = "<group>"; };
+		BC15720F2224B2ED008B4E16 /* KeyedEncodingContainer+Any.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyedEncodingContainer+Any.swift"; sourceTree = "<group>"; };
+		BC1572102224B2ED008B4E16 /* InvalidElementStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvalidElementStrategy.swift; sourceTree = "<group>"; };
+		BC1572112224B2ED008B4E16 /* RawCodingKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawCodingKey.swift; sourceTree = "<group>"; };
+		BC1572122224B2ED008B4E16 /* KeyedDecodingContainer+Any.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Any.swift"; sourceTree = "<group>"; };
+		BC1572132224B2ED008B4E16 /* GenericDecodingContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDecodingContainer.swift; sourceTree = "<group>"; };
+		BC1572142224B2ED008B4E16 /* AnyCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyCodable.swift; sourceTree = "<group>"; };
 		BC2778B7219E22CA0011D4EB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BC507F34219B9D39003B649D /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +73,7 @@
 		BC0A92D6219A693D0055D1AA /* JWSCodableSample */ = {
 			isa = PBXGroup;
 			children = (
+				BC15720D2224B1F0008B4E16 /* Libraries */,
 				BC507F33219B9D1C003B649D /* Data */,
 				BC0A92E9219A694A0055D1AA /* Response */,
 				BC0A92D7219A693D0055D1AA /* AppDelegate.swift */,
@@ -79,6 +92,27 @@
 				BC0A92EB219A6DA50055D1AA /* SampleResponse.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		BC15720D2224B1F0008B4E16 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				BC15720E2224B2ED008B4E16 /* Codability */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		BC15720E2224B2ED008B4E16 /* Codability */ = {
+			isa = PBXGroup;
+			children = (
+				BC15720F2224B2ED008B4E16 /* KeyedEncodingContainer+Any.swift */,
+				BC1572102224B2ED008B4E16 /* InvalidElementStrategy.swift */,
+				BC1572112224B2ED008B4E16 /* RawCodingKey.swift */,
+				BC1572122224B2ED008B4E16 /* KeyedDecodingContainer+Any.swift */,
+				BC1572132224B2ED008B4E16 /* GenericDecodingContainer.swift */,
+				BC1572142224B2ED008B4E16 /* AnyCodable.swift */,
+			);
+			path = Codability;
 			sourceTree = "<group>";
 		};
 		BC507F33219B9D1C003B649D /* Data */ = {
@@ -161,8 +195,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC1572182224B2ED008B4E16 /* KeyedDecodingContainer+Any.swift in Sources */,
+				BC1572152224B2ED008B4E16 /* KeyedEncodingContainer+Any.swift in Sources */,
+				BC1572162224B2ED008B4E16 /* InvalidElementStrategy.swift in Sources */,
 				BC0A92DA219A693D0055D1AA /* ViewController.swift in Sources */,
+				BC1572192224B2ED008B4E16 /* GenericDecodingContainer.swift in Sources */,
 				BC0A92EC219A6DA50055D1AA /* SampleResponse.swift in Sources */,
+				BC1572172224B2ED008B4E16 /* RawCodingKey.swift in Sources */,
+				BC15721A2224B2ED008B4E16 /* AnyCodable.swift in Sources */,
 				BC0A92D8219A693D0055D1AA /* AppDelegate.swift in Sources */,
 				BC507F35219B9D39003B649D /* SampleData.swift in Sources */,
 			);

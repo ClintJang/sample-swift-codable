@@ -19,6 +19,9 @@ class ViewController: UIViewController {
         sampleStructData03()
         sampleStructData04()
 
+        // AnyCodable
+        sampleAnyCodableData01()
+        
         // Request
         sampleRequest01()
     }
@@ -110,9 +113,45 @@ extension ViewController {
     }
 }
 
-// MARK: - Sample enum
+// MARK: - Sample Any
 extension ViewController {
-    
+    func sampleAnyCodableData01() {
+        print("===============================")
+        print("== \(#function)")
+        
+        let dataJsonString = """
+        [
+            {
+                "id": "aaaa@gmail.com",
+                "code": "1234567890",
+            },
+            {
+                "id": 1234,
+                "code": "abcdefghijklmn",
+            }
+        ]
+        """.data(using: .utf8)!
+        
+        do {
+            let samples = try JSONDecoder().decode([SampleAnyCodableData01].self, from: dataJsonString)
+            //
+            _ = samples.enumerated().map { sample -> String in
+                if sample.element.id.value is String {
+                    print("index \(sample.offset) : id.value is String")
+                } else if sample.element.id.value is Int {
+                    print("index \(sample.offset) : id.value is Int")
+                } else {
+                    print("index \(sample.offset) : id.value is ?")
+                }
+                return ""
+            }
+            print(samples)
+        } catch {
+            print(error)
+        }
+        
+        print("===============================\n\n")
+    }
 }
 
 // MARK: - Sample Request

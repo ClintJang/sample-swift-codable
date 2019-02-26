@@ -43,4 +43,8 @@ struct SampleStructData04 : Codable {
     let order : Int
 }
 
-
+/// https://github.com/yonaskolb/Codability
+struct SampleAnyCodableData01 : Codable {
+    let id : AnyCodable
+    let code : String
+}

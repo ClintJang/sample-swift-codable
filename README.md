@@ -85,6 +85,12 @@ struct SampleStructData04 : Codable {
     let code : String
     let order : Int
 }
+
+/// https://github.com/yonaskolb/Codability
+struct SampleAnyCodableData01 : Codable {
+    let id : AnyCodable
+    let code : String
+}
 ```
 
 - [SampleResponse.swift](https://github.com/ClintJang/sample-swift-codable/blob/master/JWSCodableSample/JWSCodableSample/Data/SampleResponse.swift)
@@ -213,6 +219,49 @@ extension SampleResponse {
     }
     ```
 
+	- func sampleAnyCodableData01()
+		- Codable을 사용하면서 Any 타입이 필요할 때.. 쉽지 않습니다. 그래서 라이브러리를 하나 사용해 봤습니다.
+		- https://github.com/yonaskolb/Codability
+	```
+	func sampleAnyCodableData01() {
+        print("===============================")
+        print("== \(#function)")
+        
+        let dataJsonString = """
+        [
+            {
+                "id": "aaaa@gmail.com",
+                "code": "1234567890",
+            },
+            {
+                "id": 1234,
+                "code": "abcdefghijklmn",
+            }
+        ]
+        """.data(using: .utf8)!
+        
+        do {
+            let samples = try JSONDecoder().decode([SampleAnyCodableData01].self, from: dataJsonString)
+            //
+            _ = samples.enumerated().map { sample -> String in
+                if sample.element.id.value is String {
+                    print("index \(sample.offset) : id.value is String")
+                } else if sample.element.id.value is Int {
+                    print("index \(sample.offset) : id.value is Int")
+                } else {
+                    print("index \(sample.offset) : id.value is ?")
+                }
+                return ""
+            }
+            print(samples)
+        } catch {
+            print(error)
+        }
+        
+        print("===============================\n\n")
+    }
+	```
+	
 	- func sampleRequest01()
 	
 	```swift
